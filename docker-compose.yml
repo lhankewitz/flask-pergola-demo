@@ -1,7 +1,7 @@
 services:
   flask-todo-web:
     build:
-      context: .
+      context: ./buildctx
       dockerfile: docker/Dockerfile.app
     environment:
       SQLALCHEMY_HOST: flask-todo-db

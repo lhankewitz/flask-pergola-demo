@@ -4,6 +4,7 @@ components:
 - name: todo-app
   docker:
     file: docker/Dockerfile.app
+    build-context: ./buildctx
   ports:
   - 5050
   ingresses:
@@ -39,6 +40,7 @@ components:
 
 - name: add-todo-at-release
   docker:
+    build-context: ./buildctx
     file: docker/Dockerfile.app
   command: [ "bash", "-c" ]
   args: [ "python3 insert_todo.py \"new release pushed: $(date)\"" ]
