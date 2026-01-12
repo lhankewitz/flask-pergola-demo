@@ -1,5 +1,7 @@
 FROM python:3.14-slim
 
+COPY requirements.txt requirements.txt
+
 RUN apt-get update -y && \
     apt-get install -y gcc libpq-dev && \
     apt-get clean && \
