@@ -3,7 +3,7 @@ version: v1
 components:
 - name: todo-app
   docker:
-    file: Dockerfile
+    file: docker/Dockerfile.app
   ports:
   - 5050
   ingresses:
@@ -39,7 +39,7 @@ components:
 
 - name: add-todo-at-release
   docker:
-    file: Dockerfile
+    file: docker/Dockerfile.app
   command: [ "bash", "-c" ]
   args: [ "python3 insert_todo.py \"new release pushed: $(date)\"" ]
   scheduled: "@release"
