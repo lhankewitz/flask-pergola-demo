@@ -1,6 +1,8 @@
 services:
   flask-todo-web:
-    build: .
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.app
     environment:
       SQLALCHEMY_HOST: flask-todo-db
       SQLALCHEMY_PORT: "5432"
